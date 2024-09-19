@@ -10,4 +10,64 @@ void main() {
   if (male) {
     print("Male");
   }
+  print("***********");
+  print("*         *");
+  print("*         *");
+  print("*         *");
+  print("*         *");
+  print("*         *");
+  print("*         *");
+  print("**********");
+
+  print("     *    ");
+  print("   *   *   ");
+  print("  *     *   ");
+  print(" *       *   ");
+  print("*         *   ");
+  print("* * * * * * ");
+
+  print("      *      ");
+  print("    *   *    ");
+  print("  *        *   ");
+  print("*            * ");
+  print("*            * ");
+  print("*            * ");
+  print("*            * ");
+  print("*  *  *  *   *  ");
+
+  print("          *            ");
+  print("         ***            ");
+  print("        *****            ");
+  print("       *******            ");
+  print("      *********            ");
+  print("     ***********            ");
+
+  print("         *\n        ***\n       *****\n      *******\n");
+
+  print("  ***     ***  ");
+  print(" *****   ***** ");
+  print("******* *******");
+  print("***************");
+  print(" ************* ");
+  print("  ***********  ");
+  print("   *********   ");
+  print("     *****     ");
+  print("      ***      ");
+  print("       *       ");
+
+  print("       *        ");
+  print("      ***       ");
+  print("     *****      ");
+  print("    *******     ");
+  print("   *********   ");
+  print("  ***********  ");
+  print(" ************* ");
+  print("***************");
+  print(" ************* ");
+  print("  ***********  ");
+  print("   *********   ");
+  print("    *******    ");
+  print("     *****     ");
+  print("      ***      ");
+  print("       *       ");
 }
