@@ -1,0 +1,96 @@
+In Dart, the String class allows you to create and manipulate string values. When you create a string value, you’re actually creating an instance of the String class. Here’s a bit more detail:
+
+String Creation: You can create a string value by assigning a sequence of characters to a variable.
+var greeting = 'Hello, World!';
+
+String Methods: Since greeting is a String object, you can use various methods provided by the String class to manipulate it.
+
+print(greeting.toUpperCase()); // Outputs: HELLO, WORLD!
+print(greeting.length);        // Outputs: 13
+
+String Interpolation in Dart
+String interpolation allows you to embed expressions directly within string literals, making it easier to construct strings dynamically.
+var name = 'Bob';
+var message = 'Hello, $name!';
+print(message); // Outputs: Hello, Bob!
+
+var name = 'Bob';
+var message = 'Hello, $name!';
+print(message); // Outputs: Hello, Bob!
+
+${age + 1} evaluates the expression age + 1 and embeds the result in the string.
+String interpolation makes it easy to construct strings dynamically and readably.
+
+
+
+ In Dart, Object is the base class for all objects. This means every class in Dart, either directly or indirectly, inherits from Object. Here’s a simple way to understand it:
+
+Inheritance: Since Object is the base class, all other classes inherit its properties and methods.
+Flexibility: You can use Object to store any type of value, but you might need to cast it to a specific type to perform certain operations.
+
+Object value = 'Hello, Dart!';
+print(value); // This works because 'print' can handle any Object
+
+value = 123;
+print(value); // This also works
+
+// To use 'value' as a String, you need to cast it
+if (value is String) {
+  print((value as String).toUpperCase()); // Casting to String
+}
+Using Object provides flexibility while maintaining some type safety, as you need to explicitly cast to perform type-specific operations
+
+Using Object and dynamic in Dart
+Object
+Definition: Object is the base class for all Dart objects.
+Usage: Use Object when you want a variable to hold values of different types, but you still want some type safety.
+Limitations: You cannot perform operations specific to a type without casting.
+Object name = 'Alice'; // 'name' can hold any type of object
+name = 42; // Now 'name' holds an integer
+// To use 'name' as a String, you need to cast it
+if (name is String) {
+  print((name as String).toUpperCase()); // Casting to String
+}
+
+
+dynamic
+Definition: dynamic is a special type that disables type checking.
+Usage: Use dynamic when you need maximum flexibility and are sure about the types at runtime.
+Caution: Since dynamic bypasses type checking, it can lead to runtime errors if not used carefully.
+dynamic value = 'Alice'; // 'value' can hold any type
+value = 42; // Now 'value' holds an integer
+// No need to cast, but be cautious
+print(value.toUpperCase()); // This will cause a runtime error if 'value' is not a String
+
+Key Differences
+Type Safety: Object provides some level of type safety, while dynamic does not.
+Type Casting: With Object, you often need to cast to the specific type to perform type-specific operations. With dynamic, you don’t need to cast, but you lose compile-time type checking.
+
+
+
+
+
+Null safety
+#
+The Dart language enforces sound null safety.
+
+Null safety prevents an error that results from unintentional access of variables set to null. The error is called a null dereference error. A null dereference error occurs when you access a property or call a method on an expression that evaluates to null. An exception to this rule is when null supports the property or method, like toString() or hashCode. With null safety, the Dart compiler detects these potential errors at compile time.
+
+For example, say you want to find the absolute value of an int variable i. If i is null, calling i.abs() causes a null dereference error. In other languages, trying this could lead to a runtime error, but Dart's compiler prohibits these actions. Therefore, Dart apps can't cause runtime errors.
+
+Null safety introduces three key changes:
+
+When you specify a type for a variable, parameter, or another relevant component, you can control whether the type allows null. To enable nullability, you add a ? to the end of the type declaration.
+
+String? name  // Nullable type. Can be `null` or string.
+
+String name   // Non-nullable type. Cannot be `null` but can be string.
+content_copy
+You must initialize variables before using them. Nullable variables default to null, so they are initialized by default. Dart doesn't set initial values to non-nullable types. It forces you to set an initial value. Dart doesn't allow you to observe an uninitialized variable. This prevents you from accessing properties or calling methods where the receiver's type can be null but null doesn't support the method or property used.
+
+You can't access properties or call methods on an expression with a nullable type. The same exception applies where it's a property or method that null supports like hashCode or toString().
+
+Sound null safety changes potential runtime errors into edit-time analysis errors. Null safety flags a non-null variable when it has been either:
+
+Not initialized with a non-null value.
+Assigned a null value.
